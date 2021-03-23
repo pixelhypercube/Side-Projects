@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Matrix Functions!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Visual Matrix Functions (Beta)</h1>
+        <h2>By PixelHyperCube!</h2>
+    </header>
+    <main class="container-fluid">
+        <br>
+        <div class="alert alert-info">
+            This is just a visualization about how matrix operations work.
+        </div>
+        <div id="info">
+            <p>You can also enter values into the grey cells</p>
+        </div>
+        <section>
+            <hr>
+            <h2>Matrix <strong>A</strong>:</h2>
+            <div class="d-flex m-auto justify-content-between" id="table1Btns">
+                <button class="btn btn-success" id="addRow1">+ Add Row</button>
+                <button class="btn btn-danger" id="remRow1">- Remove Row</button>
+                <button class="btn btn-success" id="addCol1">+ Add Column</button>
+                <button class="btn btn-danger" id="remCol1">- Remove Column</button>
+            </div>
+            <br>
+            <table id="firstMatrix">
+
+            </table>
+            <br>
+            <h2>Matrix <strong>B</strong>:</h2>
+            <div class="d-flex m-auto justify-content-between" id="table1Btns">
+                <button class="btn btn-success" id="addRow2">+ Add Row</button>
+                <button class="btn btn-danger" id="remRow2">- Remove Row</button>
+                <button class="btn btn-success" id="addCol2">+ Add Column</button>
+                <button class="btn btn-danger" id="remCol2">- Remove Column</button>
+            </div>
+            <br>
+            <table id="secondMatrix">
+
+            </table>
+            <br>
+            <div class="d-flex flex-row" id="operationBtns">
+                <button class="btn btn-success operationBtn" id="add">Add! (<strong>A</strong>+<strong>B</strong>)</button>
+                <button class="btn btn-success operationBtn" id="subtract">Subtract! (<strong>A</strong>-<strong>B</strong>)</button>
+                <button class="btn btn-success operationBtn" id="multiply">Multiply! (<strong>A</strong>*<strong>B</strong>)</button>
+            </div>
+            <h1 style="display:none;" id="formula">Formula: <strong>A</strong> <span id="operator">(+/-/*)</span> <strong>B</strong></h1>
+            <hr>
+            <h2>Resultant Matrix:</h2>
+            <div style="display:none;" id="msg" class="alert alert-danger"></div>
+            <table id="resultantMatrix">
+
+            </table>
+        </section>
+    </main>
+    <br>
+    <footer>
+        &copy; 2020
+    </footer>
+</body>
+
+</html>

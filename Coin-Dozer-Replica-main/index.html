@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Dozer Replica!</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./p5.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <header>
+            <h1>Coin Dozer Replica! (Beta)</h1>
+            <h2>By PixelHyperCube!</h2>
+            <h4>A miniproject made using Matter.js and p5.js!</h4>
+            <a class="text-dark" href="https://github.com/pixelhypercube/Coin-Dozer-Replica">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                View this project on Github!
+            </a>
+        </header>
+        <main class="container">
+            <hr>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>Apologies!</strong> - it works best on computer at the moment, will attempt to make it easier on other platforms soon!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="info">
+                <h1>Inspired by the original <i>Coin Dozer</i>!</h1>
+                <p>(Used to play this game as a kid!)</p>
+                <a href="https://www.gamecircus.com/Games/coin-dozer/" class="btn btn-info">Link to game!</a>
+                <h2>How to play:</h2>
+                <ol>
+                    <li>Drop coins onto the platform to push the coins into the collector!</li>
+                    <li>Be careful, coins will be lost when they fall on the sides!</li>
+                    <li>How long will you last with a 100 coins in your pocket?</li>
+                </ol>
+            </div>
+            <div id="table">
+                <h2>Value of coins</h2>
+                <table class="table table-dark table-bordered">
+                    <tr>
+                        <th></th>
+                        <th>Coin</th>
+                        <th>Worth</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="coinIcon" src="./diamondCoin.png"/>
+                        </td>
+                        <td>Diamond Coin</td>
+                        <td>10 Coins</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="coinIcon" src="./silverCoin.png"/>
+                        </td>
+                        <td>Silver Coin</td>
+                        <td>2 Coins</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="coinIcon" src="./coin.png"/>
+                        </td>
+                        <td>Normal Coin</td>
+                        <td>1 Coin</td>
+                    </tr>
+                </table>
+            </div>
+            <h2>Game</h2>
+            <div id="canvas"></div>
+        </main>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script> -->
+        <script src="./matter.min.js"></script>
+        <script src="./Boundary.js"></script>
+        <script src="./Coin.js"></script>
+        <script src="./Rect.js"></script>
+        <!-- <script src="./Triangle.js"></script> -->
+        <script src="./script.js"></script>
+    </body>
+</html>

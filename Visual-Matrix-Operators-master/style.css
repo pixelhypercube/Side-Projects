@@ -1,0 +1,57 @@
+html,body {
+    margin:0;
+    /* height:100vh; */
+    background:rgb(213, 235, 236);
+}
+header {
+    width:100%;
+    text-align:center;
+    background:rgb(27, 76, 95);
+    color:white;
+    padding:20px;
+}
+
+main {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+table,tr,td {
+    border-collapse: collapse;
+}
+td {
+    width:50px;
+    height:50px;
+    background:grey;
+    border-radius:10px;
+}
+td input {
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    border:none;
+    /* outline:none; */
+    background:rgb(167, 167, 167);
+    text-align:center;
+    margin:auto;
+}
+.operationBtn {
+    font-size:32px;
+    margin:10px;
+}
+footer {
+    width:100%;
+    text-align:center;
+    background:rgb(27, 76, 95);
+    color:white;
+    padding:20px;
+}
+span.multSize {
+    color:green;
+}
+div#info {
+    padding:20px;
+    font-size:20px;
+}

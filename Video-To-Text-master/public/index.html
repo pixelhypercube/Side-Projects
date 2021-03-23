@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Youtube to Canvas to Text!</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/script.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Video to Text!</h1>
+            <h4>By PixelHyperCube</h4>
+        </header>
+        <div class="container">
+            <main>
+                <section style="text-align:center;">
+                    <hr style="border:2px solid #cccccc;background:#cccccc">
+                    <h2>Select a video and see the magic below!</h2>
+                    <hr style="border:2px solid #cccccc;background:#cccccc">
+                </section>
+                <section>
+                    <h3>Choose a video!</h3>
+                    <form action="">
+                        <div class="form-group">
+                            <select name="" id="video" class="form-control">
+                                <option value="1">Video 1 - Demo Video 1</option>
+                                <option value="2">Video 2 - Demo Video 2</option>
+                                <option value="3">Video 3 - Minecraft</option>
+                                <option value="4">Video 4 - Uncle Roger</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- <form action="">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="" id="youtubeLink">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control btn btn-success" type="submit" value="Load video!">
+                        </div>
+                    </form> -->
+                </section>
+                <section>
+                    <h3>Video:</h3>
+                    <div class="alert alert-info">
+                        <strong>P.S </strong> - the videos may emit sound
+                    </div>
+                    <!-- <video controls="true" width="640" height="360" id="videoPlayer" preload="none">
+                        <source type="video/youtube" src="https://www.youtube.com/watch?v=bGtR3l_JeUo" />
+                    </video> -->
+                    <video id="videoPlayer" width="320" height="180" controls="true" src="./video1.mp4">
+                    </video>
+                    <canvas style="display:none;" id="videoCanvas">
+
+                    </canvas>
+                    <h3>Output Text:</h3>
+                    <div id="textArea">
+                        <!-- <p id="text"></p> -->
+                        <textarea cols="30" rows="10" name="" id="text" cols="30" rows="10"></textarea>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script>
+            
+        </script>
+    </body>
+</html>

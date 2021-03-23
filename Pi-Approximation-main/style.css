@@ -1,0 +1,79 @@
+body {
+    background:rgb(198, 234, 255);
+    -webkit-text-size-adjust: 100%;
+}
+
+header {
+    padding:20px;
+    text-align:center;
+    color:white;
+}
+canvas {
+    text-align:center;
+    max-width:360px;
+    max-height:360px;
+    width:100%;
+    height:100%;
+    border:2px solid black;
+}
+
+form {
+    width:80%;
+    margin:auto;
+}
+
+div#notif_window {
+    padding:10px;
+    background:#dddddd;
+    border-radius:20px;
+    margin:5%;
+}
+
+p#ratio, p#pi,p#difference, p#circles {
+    font-weight:700;
+    font-size:28px;
+    background:black;
+    color:white;
+    padding:3px 0px;
+    margin:15px auto;
+    border-radius:20px;
+    max-width:500px;
+}
+main {
+    padding:15px;
+}
+.num0 {
+    color:rgb(255, 189, 189);
+}
+.num1 {
+    color:rgb(255, 231, 185);
+}
+.num2 {
+    color:rgb(255, 255, 185);
+}
+.num3 {
+    color:rgb(184, 255, 184);
+}
+.num4 {
+    color:rgb(189, 238, 255);
+}
+.num5 {
+    color:rgb(181, 181, 255);
+}
+.num6 {
+    color:rgb(226, 185, 255);
+}
+.num7 {
+    color:rgb(255, 191, 255);
+}
+.num8 {
+    color:rgb(255, 218, 255);
+}
+.num9 {
+    color:rgb(255, 223, 228);
+}
+
+main {
+    width:80%;
+    margin:auto;
+}

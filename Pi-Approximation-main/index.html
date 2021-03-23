@@ -1,0 +1,75 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pi Approximation</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <header class="bg-dark">
+            <h1>Pi (π) Approximation Simulation</h1>
+            <h4>By PixelHyperCube</h4>
+            <a class="text-light"
+            style="font-size:18px;"
+             href="https://github.com/pixelhypercube/Pi-Approximation">
+                <i class="fab fa-github"></i>
+                View this project on github!
+            </a>
+        </header>
+        <main>
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <div id="inspiration">
+                        <h2>Inspired by:</h2>
+                        <h5><i>The Coding Train</i>'s Coding Challenge -</h5>
+                        <h5>'Approximating the Value of Pi'</h5>
+                        <a 
+                        class="btn btn-info"
+                        href="https://thecodingtrain.com/CodingChallenges/095-approximating-pi.html"
+                        >Click To View <i>The Coding Train</i>'s Page</a>
+                    </div>
+                    <hr style="width:50%">
+                    <div id="notif_window">
+                        <h5>How this works:</h5>
+                        <p>By adding random circles onto the board, pi is calculated by taking the ratio of the number of red circles to the total number of circles on the board. Multiply that by 4, then you'll get the approximate value of pi!</p>
+                        <p><strong>Number of red circles / Total number of circles ≈ π</strong></p>
+                    </div>
+                    <hr style="width:50%">
+                    <div style="text-align:center">
+                        <canvas style="width:400px;height:400px;" id="canvas"></canvas>
+                    </div>
+                    <hr style="width:50%">
+                    <h3>Number of Circles</h3>
+                    <p id="circles"></p>
+                    <hr style="width:50%">
+                    <h4>Approximate Value:</h4>
+                    <p id="ratio"></p>
+                    <h4>Value of Pi:</h4>
+                    <p id="pi">3.14159265358979323846</p>
+                    <h4>Difference</h4>
+                    <p id="difference"></p>
+                    <hr style="width:50%">
+                    <form id="form" action="">
+                        <div class="form-group">
+                            <label for="iterations">Number of iterations (Range: 0-10000):</label>
+                            <input min="0" max="10000" placeholder="Input a number" class="form-control" value="500" type="number" name="" id="iterations">
+                        </div>
+                        <div id="largeValueWarning" class="alert alert-danger">
+                            <h5>⚠ Large Value Detected ⮥</h5>
+                        </div>
+                        <div class="form-group">
+                            <input id="start" class="form-control" type="submit" value="Begin Simulation!">
+                        </div>
+                    </form>
+                    <hr style="width:50%">
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

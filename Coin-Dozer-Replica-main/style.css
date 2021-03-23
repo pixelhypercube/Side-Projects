@@ -1,0 +1,40 @@
+body {
+    margin:0;
+    background:rgb(212, 204, 168);
+}
+header {
+    text-align: center;
+    font-size:150%;
+    /* font-family:Tahoma; */
+    background:rgb(81, 196, 241);
+    padding:1%;
+}
+h1,h2,h3,h4,h5,h6 {
+    text-align:center;
+}
+div#info {
+    text-align: center;
+    padding:20px;
+    background:rgb(136, 158, 175);
+    border:2px solid rgb(25, 55, 75);
+    margin:5% auto;
+    border-radius: 25px;
+    /* width:50%; */
+    max-width:700px;
+}
+div#info ol li,p {
+    font-size:18px;
+}
+div#canvas {
+    display:block;
+    margin:0 auto;
+}
+canvas {
+    display:block;
+    margin:0 auto;
+    width:100%;
+}
+img.coinIcon {
+    width:64px;
+    height:64px;
+}
