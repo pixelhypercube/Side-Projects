@@ -3,6 +3,16 @@
 
 Inspired by the original <i>Flappy Bird</i> game made by dotGEARS, I've decided to make a personal project of it but I wanted to add in more game modes to make it more exciting!
 
+---
+
+# Download:
+#### Link : https://github.com/pixelhypercube/Mini-Projects/releases/download/FlappyPixelball-v1.0/flappyPixelball-v1.0.zip
+### How to run the program:
+1. Extract the zip file by double clicking on it
+2. Double click on game.exe and start playing!!!
+
+- Unfortunately, game.exe wouldn't work if it's in other directories :( (may try to fix in a next update)
+
 (Sorry my drawings aren't that great as I'm trash at doing art stuff haha ;) )
 
 ## Normal Level (just like Flappy Bird)
@@ -25,12 +35,5 @@ Inspired by the original <i>Flappy Bird</i> game made by dotGEARS, I've decided 
 | Key  | Function |
 | --- | --- |
 | Left Click / Space | Jump |
----
-# Download:
-#### Link : https://github.com/pixelhypercube/Flappy-Pixelball/releases/download/1.0/flappyPixelball-v1.0.zip
-### How to run the program:
-1. Extract the zip file by double clicking on it
-2. Double click on game.exe and start playing!!!
 
-- Unfortunately, game.exe wouldn't work if it's in other directories :( (may try to fix in a next update)
 ---

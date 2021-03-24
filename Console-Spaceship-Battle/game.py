@@ -2,8 +2,8 @@ import os,time,keyboard
 import numpy as np
 width = 80
 height = 20
-dispArr = [] # The array that we're going to use for display
-starArr = [] # The array for stars
+dispArr = [] # The list that we're going to use for display
+starArr = [] # The list for stars
 enemyArr = [] # The list to store the enemies
 bulletArr = [] # The list to store the bullets
 lifeBarArr = [] # The list to store the lifebars
@@ -266,7 +266,7 @@ def intro():
  - PixelHyperCube
 
  Project Link:
- https://github.com/pixelhypercube/Console-Spaceship-Battle
+ https://github.com/pixelhypercube/Mini-Projects/tree/main/Console-Spaceship-Battle
 
  How to play:
  - Shoot down as many enemy spaceships as possible before your spaceship breaks down!
@@ -317,7 +317,7 @@ def game_over():
 
     """)
     print("Thanks for playing! ")
-    print("Link to project:\nhttps://github.com/pixelhypercube/Console-Spaceship-Battle\n")
+    print("Link to project:\nhttps://github.com/pixelhypercube/Mini-Projects/tree/main/Console-Spaceship-Battle\n")
     print("Program will automatically close in 20 seconds...")
     time.sleep(20)
     # Working on these!

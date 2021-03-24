@@ -10,7 +10,7 @@
 - 'SPACE' to shoot!
 
 ### Download the .exe file using the link below!
-https://github.com/pixelhypercube/Console-Spaceship-Battle/releases/download/v1.0-beta/game.exe
+https://github.com/pixelhypercube/Mini-Projects/releases/tag/ConsoleSpaceshipBattle-1.0beta/game.exe
 
 ### Demo Gameplay:
 ##### Sorry it's flickering
