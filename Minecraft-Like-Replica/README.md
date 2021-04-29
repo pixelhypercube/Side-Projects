@@ -8,4 +8,4 @@ More updates to come!
 
 Use the W,A,S and D keys to move and press 'Space' to jump!
 
-Link: [pixelhypercube.github.io/Minecraft-Like-Replica](http://pixelhypercube.github.io/Minecraft-Like-Replica)
+Link: [pixelhypercube.github.io/Side-Projects/Minecraft-Like-Replica/public](http://pixelhypercube.github.io/Side-Projects/Minecraft-Like-Replica/public)
