@@ -2,7 +2,7 @@
 A web remake of [Coin Dozer](https://www.gamecircus.com/Games/coin-dozer/) that I used to play when I was a kid!
 Made using matter.js and p5.js!
 
-[Project Link](https://pixelhypercube.github.io/Coin-Dozer-Replica)
+[Project Link](https://pixelhypercube.github.io/Side-Projects/Coin-Dozer-Replica)
 
 ![Gameplay](gameplay.png)
 
