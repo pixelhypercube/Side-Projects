@@ -2,4 +2,4 @@
 
 A quick mini physics simulator I made using C++!
 
-![Demo]("demo.gif")
+![Demo](demo.gif)
