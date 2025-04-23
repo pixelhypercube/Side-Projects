@@ -11,6 +11,7 @@ Decided that it'll be a good way to prioritize my arrangement of my projects!
 | Side Project | Type |
 | ------------ | ---- |
 | 2D Spleef | Java |
+| CPP Physics | C++ |
 | Coin Dozer Replica | Web + p5.js + matter.js |
 | Console Spaceship Battle | Python |
 | Escape The Bombfield | React |
