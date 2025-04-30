@@ -1,0 +1,7 @@
+----------HELP----------
+/add <x> <y> <r> <vx> <vy> <color> (adds a ball into the simulation)
+/back (returns to the simulation)
+/setbordertype <type> (changes the border type)
+/setdimensions <width> <height> (changes the dimensions of the canvas)
+/help (provides a full list of commands)
+--------END HELP-------

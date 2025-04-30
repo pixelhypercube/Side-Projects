@@ -7,6 +7,8 @@
 #include <cfloat>
 #include <random>
 #include <windows.h>
+#include <sstream>
+#include <fstream>
 
 // animation
 #include <chrono>
@@ -30,6 +32,14 @@ void setConsoleColor(Color color) {
 
 void resetConsoleColor() {
     std::cout << "\033[0m";
+}
+
+void transformStringLower(string& str) {
+    for (int i = 0;i<str.length();i++) str[i] = tolower(str[i]);
+}
+
+void transformStringUpper(string& str) {
+    for (int i = 0;i<str.length();i++) str[i] = toupper(str[i]);
 }
 
 class Element {
@@ -170,20 +180,35 @@ class Canvas {
         int lx = 8, ly = 8;
         vector<Element*> elements;
         vector<vector<Pixel>> canvas;
+        int borderType = 1; // 0 - rectangle, 1 - circle/ellipse
     public:
-        Canvas() {
+        void initCanvas() {
+            canvas.erase(canvas.begin(),canvas.end());
             for (int i = 0;i<height;i++) {
                 canvas.push_back(vector<Pixel>());
                 for (int j = 0;j<width;j++) {
-                    if (i==0 && j==0) canvas[i].push_back({'+',RESET});
-                    else if (i==0 && j==width-1) canvas[i].push_back({'+',RESET});
-                    else if (i==height-1 && j==0) canvas[i].push_back({'+',RESET});
-                    else if (i==height-1 && j==width-1) canvas[i].push_back({'+',RESET});
-                    else if (i==0 || i==height-1) canvas[i].push_back({'-',RESET});
-                    else if (j==0 || j==width-1) canvas[i].push_back({'|',RESET});
-                    else canvas[i].push_back({' ',RESET});
+                    if (borderType==0) {
+                        if (i==0 && j==0) canvas[i].push_back({'+',RESET});
+                        else if (i==0 && j==width-1) canvas[i].push_back({'+',RESET});
+                        else if (i==height-1 && j==0) canvas[i].push_back({'+',RESET});
+                        else if (i==height-1 && j==width-1) canvas[i].push_back({'+',RESET});
+                        else if (i==0 || i==height-1) canvas[i].push_back({'-',RESET});
+                        else if (j==0 || j==width-1) canvas[i].push_back({'|',RESET});
+                        else canvas[i].push_back({' ',RESET});
+                    } else if (borderType==1) {
+                        double a = width/2.0-1;
+                        double b = height/2.0-1;
+                        double dx = j-width/2.0;
+                        double dy = i-height/2.0;
+                        double ellipseEq = (dx*dx)/(a*a) + (dy*dy)/(b*b);
+                        if (ellipseEq>=0.9 && ellipseEq<=1.1) canvas[i].push_back({'+',RESET});
+                        else canvas[i].push_back({' ',RESET});
+                    }
                 }
             }
+        }
+        Canvas() {
+            initCanvas();
         }
         ~Canvas() {}
 
@@ -191,13 +216,23 @@ class Canvas {
             resetConsoleColor();
             for (int i = 0;i<height;i++) {
                 for (int j = 0;j<width;j++) {
-                    if (i==0 && j==0) canvas[i][j] = {'+',RESET};
-                    else if (i==0 && j==width-1) canvas[i][j] = {'+',RESET};
-                    else if (i==height-1 && j==0) canvas[i][j] = {'+',RESET};
-                    else if (i==height-1 && j==width-1) canvas[i][j] = {'+',RESET};
-                    else if (i==0 || i==height-1) canvas[i][j] = {'-',RESET};
-                    else if (j==0 || j==width-1) canvas[i][j] = {'|',RESET};
-                    else canvas[i][j] = {' ',RESET};
+                    if (borderType==0) {
+                        if (i==0 && j==0) canvas[i][j] = {'+',RESET};
+                        else if (i==0 && j==width-1) canvas[i][j] = {'+',RESET};
+                        else if (i==height-1 && j==0) canvas[i][j] = {'+',RESET};
+                        else if (i==height-1 && j==width-1) canvas[i][j] = {'+',RESET};
+                        else if (i==0 || i==height-1) canvas[i][j] = {'-',RESET};
+                        else if (j==0 || j==width-1) canvas[i][j] = {'|',RESET};
+                        else canvas[i][j] = {' ',RESET};
+                    } else if (borderType==1) {
+                        double a = width/2.0-1;
+                        double b = height/2.0-1;
+                        double dx = j-width/2.0;
+                        double dy = i-height/2.0;
+                        double ellipseEq = (dx*dx)/(a*a) + (dy*dy)/(b*b);
+                        if (ellipseEq>=0.9 && ellipseEq<=1.1) canvas[i][j] = {'+',RESET};
+                        else canvas[i][j] = {' ',RESET};
+                    }
                 }
             }
         }
@@ -300,15 +335,43 @@ class Canvas {
                         }
                     }
 
-                    if (x-r<=0 || x+r>=width-1) {
-                        dx = -0.8*dx;
-                        if (x-r<=0) s->setPosition(r,y);
-                        else if (x+r>=width-1) s->setPosition(width-1-r,y);
-                    }
-                    if (y-r<=0 || y+r>=height-1) {
-                        dy = -0.8*dy;
-                        if (y-r<=0) s->setPosition(x,r);
-                        else if (y+r>=height-1) s->setPosition(x,height-1-r);
+                    if (borderType==0) {
+                        if (x-r<=0 || x+r>=width-1) {
+                            dx = -0.8*dx;
+                            if (x-r<=0) s->setPosition(r,y);
+                            else if (x+r>=width-1) s->setPosition(width-1-r,y);
+                        }
+                        if (y-r<=0 || y+r>=height-1) {
+                            dy = -0.8*dy;
+                            if (y-r<=0) s->setPosition(x,r);
+                            else if (y+r>=height-1) s->setPosition(x,height-1-r);
+                        }
+                    } else if (borderType==1) {
+                        double a = width / 2.0 - 1;
+                        double b = height / 2.0 - 1;
+                        double cx = width / 2.0;
+                        double cy = height / 2.0;
+
+                        double dxFromCenter = x - cx;
+                        double dyFromCenter = y - cy;
+                        double ellipseEq = (dxFromCenter * dxFromCenter) / (a * a) + (dyFromCenter * dyFromCenter) / (b * b);
+                        if (ellipseEq>=1.0) {
+                            double nx = 2*dxFromCenter / (a*a);
+                            double ny = 2*dyFromCenter / (b*b);
+                            double norm = sqrt(nx*nx+ny*ny);
+                            nx/=norm;
+                            ny/=norm;
+
+                            double dot = dx*nx + dy*ny;
+                            dx = dx-2*dot*nx;
+                            dy = dy-2*dot*ny;
+
+                            double scale = sqrt((dxFromCenter * dxFromCenter) / (a * a) + (dyFromCenter * dyFromCenter) / (b * b));
+                            x = cx + dxFromCenter / scale * 0.99;
+                            y = cy + dyFromCenter / scale * 0.99;
+
+                            s->setPosition(x,y);
+                        }
                     }
 
                     s->setVelocity(dx,dy);
@@ -318,7 +381,100 @@ class Canvas {
                 element->update();
             }
         }
+
+        void setBorderType(int bType) {
+            borderType = bType;
+        }
+
+        void setDimensions(int w, int h) {
+            width = w;
+            height = h;
+            initCanvas();
+
+            for (auto& element : elements) {
+                double x = element->getPos().first;
+                double y = element->getPos().second;
+
+                Sphere* s = dynamic_cast<Sphere*>(element);
+                if (s!=nullptr) {
+                    double r = s->getRadius();
+                    element->setPosition(min(x,w-r),min(y,h-r));
+                }
+            }
+        }
 };
+
+void outputCommandContents() {
+    ifstream file("./commands.csv");
+    string line;
+    bool isHeader = true;
+
+    cout << "----------HELP----------\n";
+
+    while (getline(file,line)) {
+        if (isHeader) {
+            isHeader = false;
+            continue;
+        }
+
+        stringstream ss(line);
+        string command, params, description;
+
+        getline(ss,command,',');
+        getline(ss,params,',');
+        getline(ss,description,',');
+
+        cout << command;
+        if (!params.empty()) cout << " " << params;
+        cout << " (" << description << ")\n";
+    }
+    cout << "--------END HELP--------\n";
+    file.close();
+}
+
+bool processCommand(string& commandStr, Canvas& canvas) {
+    stringstream ss(commandStr);
+    string command;
+    ss >> command;
+    transformStringLower(command);
+    if (command == "add") {
+        double x, y, r, vx = 0, vy = 0;
+        string colorStr;
+        Color color = RESET;
+
+        ss >> x >> y >> r >> vx >> vy >> colorStr;
+
+        unordered_map<string,Color> colorMap = {
+            {"red",RED},
+            {"green",GREEN},
+            {"blue",BLUE},
+            {"yellow",YELLOW}
+        };
+        if (colorMap.find(colorStr) != colorMap.end()) {
+            color = colorMap[colorStr];
+        }
+
+        canvas.addSphere(x,y,r,vx,vy,color);
+    } else if (command == "setbordertype") {
+        int borderType;
+        ss >> borderType;
+        canvas.setBorderType(borderType);
+    } else if (command == "setdimensions") {
+        int width,height;
+        ss >> width >> height;
+        canvas.setDimensions(width,height);
+    } else if (command == "help") {
+        outputCommandContents();
+        // cout << "----------HELP----------\n/add <x> <y> <r> <vx> <vy> <color> (adds a ball into the simulation)\n/back (returns to the simulation)\n/setbordertype <type> (changes the border type)\n/setdimensions <width> <height> (changes the dimensions of the canvas)\n/help (provides a full list of commands)\n--------END HELP-------\n";
+        return false;
+    } else if (command == "back") {
+        return true;
+    } else {
+        cout << "Unknown command.\n";
+        return false;
+    }
+    return true;
+}
 
 int main() {
     random_device rd;
@@ -337,7 +493,7 @@ int main() {
 
     int index = 0;
     for (int i = 0;i<2;i++) {
-        for (int j = 0;j<2;j++) {
+        for (int j = 0;j<3;j++) {
             c.addSphere(6+j*6, 6+i*4, randomRad(gen), randomVel(gen), randomVel(gen),colors[(index++)%colors.size()]);
         }
     }
@@ -345,6 +501,18 @@ int main() {
 
     while (true) {
         cout << "\033[2J\033[H";  // clear screen
+
+        if (GetAsyncKeyState(VK_OEM_2) & 0x8000) {
+            bool flag = false;
+            while (!flag) {
+                string commandStr;
+                cout << "Enter command (/back to return):\n";
+                cin.ignore();
+                getline(cin,commandStr);
+                flag = processCommand(commandStr,c);
+            }
+        }
+
         c.render();
         c.updateElements();
         this_thread::sleep_for(chrono::milliseconds(50));
