@@ -1,4 +1,4 @@
-# PHC-Minigolf
+# Flappy-Pixelball
 ### My second game (on github) using pygame!
 
 Inspired by the original <i>Flappy Bird</i> game made by dotGEARS, I've decided to make a personal project of it but I wanted to add in more game modes to make it more exciting!
